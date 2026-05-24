@@ -1,0 +1,81 @@
+/* ==========================================================================
+   PREMIUM SYSTEM RESPONSIVE RECONFIGURATIONS
+   ========================================================================== */
+
+/* --- TABLET COMPACT LAYOUT ENGINE (MAX-WIDTH: 1024px) --- */
+@media (max-width: 997px) and (max-width: 768px) {
+  .hero-grid,
+  .analytics-grid,
+  .fancy-comparison-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hero-visual-panel {
+    display: none;
+    height: 300px;
+  }
+
+  /* IoT Structural Stack Adjustments */
+  .iot-flex-layout {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .iot-visual-side,
+  .iot-details-side {
+    width: 100%;
+    flex: none;
+    transform: translateY(30px);
+  }
+
+  .iot-section.scroll-reveal.in-view .iot-visual-side,
+  .iot-section.scroll-reveal.in-view .iot-details-side {
+    transform: translateY(0);
+  }
+
+  /* Grid Framework Remapping */
+  .analytics-offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl) var(--space-md);
+  }
+
+  .challenge-cards-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cards-timeline-heading {
+    font-size: 1rem;
+  }
+  /* Asymmetric Challenge Row Refactoring */
+  .challenge-flex-layout {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .fancy-centered-header h2 {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+
+  .glowing-pillars-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .challenge-content-side,
+  .challenge-visual-side {
+    width: 100%;
+    flex: none;
+    transform: translateY(30px);
+  }
+
+  .challenge-visual-side {
+    position: relative;
+    top: 0;
+  }
+
+  .challenge-section.scroll-reveal.in-view .challenge-content-side,
+  .challenge-section.scroll-reveal.in-view .challenge-visual-side {
+    transform: translateY(0);
+  }
+}
