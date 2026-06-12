@@ -28,10 +28,21 @@
           <span class="header-brand-name">Constantnople</span>
         </a>
         <nav class="header-nav-container">
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-brand">
+              <img src="assets/imgs/logo.jpg" alt="Logo" class="nav-drawer-logo" />
+              <span>Constantnople</span>
+            </a>
+          </div>
           <ul class="header-nav-list">
             ${buildNavLinks(activePage)}
           </ul>
+          <div class="nav-drawer-footer">
+            <p class="nav-drawer-tagline">Empowering fish farmers across Africa.</p>
+            <a href="contact.html" class="nav-drawer-cta">Get in Touch</a>
+          </div>
         </nav>
+        <div class="nav-backdrop"></div>
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>

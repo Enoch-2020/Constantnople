@@ -40,25 +40,32 @@ function initMobileNavigationDrawer() {
   const mobileToggleBtn = document.querySelector(".mobile-nav-toggle");
   const navigationContainer = document.querySelector(".header-nav-container");
   const navigationLinks = document.querySelectorAll(".header-nav-link");
+  const backdrop = document.querySelector(".nav-backdrop");
 
   if (!mobileToggleBtn || !navigationContainer) return;
 
-  // Toggle menu state on icon click
-  mobileToggleBtn.addEventListener("click", () => {
-    const isOpen = mobileToggleBtn.classList.toggle("open");
-    navigationContainer.classList.toggle("open", isOpen);
+  function openMenu() {
+    mobileToggleBtn.classList.add("open");
+    navigationContainer.classList.add("open");
+    if (backdrop) backdrop.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
 
-    // Prevent underlying body scroll leakage when menu overlay is active
-    document.body.style.overflow = isOpen ? "hidden" : "";
+  function closeMenu() {
+    mobileToggleBtn.classList.remove("open");
+    navigationContainer.classList.remove("open");
+    if (backdrop) backdrop.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  mobileToggleBtn.addEventListener("click", () => {
+    navigationContainer.classList.contains("open") ? closeMenu() : openMenu();
   });
 
-  // Auto-close menu drawer when clicking navigation jump links
+  if (backdrop) backdrop.addEventListener("click", closeMenu);
+
   navigationLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileToggleBtn.classList.remove("open");
-      navigationContainer.classList.remove("open");
-      document.body.style.overflow = "";
-    });
+    link.addEventListener("click", closeMenu);
   });
 }
 
