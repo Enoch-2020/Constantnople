@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 30px;
 }
 
 .premium-homepage section {
@@ -38,16 +38,11 @@
 }
 
 .fancy-centered-header h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  letter-spacing: -0.5px;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.3px;
   margin-bottom: var(--space-sm);
-  background: linear-gradient(
-    135deg,
-    var(--clr-dark-blue) 0%,
-    var(--clr-royal-blue) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--clr-white);
 }
 
 .premium-homepage section:nth-child(odd) .fancy-centered-header h2 {
@@ -273,8 +268,33 @@
 
 .iot-section {
   padding: calc(var(--space-xl) * 1.5) 0;
-  background: var(--clr-accent-blueLIGHT);
+  background: var(--clr-off-white);
   overflow: hidden;
+}
+
+/* Full-width centered header for the IoT section */
+.iot-section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+}
+
+.iot-section-header h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+  color: #0f172a;
+}
+
+/* 4-column variant for full-width layout */
+.sensor-metrics-grid--quad {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.iot-chips-centered {
+  justify-content: center;
+  margin-top: var(--space-lg);
 }
 
 .iot-flex-layout {
@@ -441,48 +461,158 @@
 
 .analytics-section {
   padding: calc(var(--space-xl) * 1.5) 0;
-  background: #ffffff;
-  color: #1a1a1a;
+  background-color: var(--clr-dark-blue);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
   overflow: hidden;
+  position: relative;
 }
 
+.analytics-section::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(18, 153, 243, 0.12) 0%,
+    transparent 65%
+  );
+  top: -25%;
+  right: -8%;
+  pointer-events: none;
+}
+
+.analytics-section::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(17, 22, 133, 0.18) 0%,
+    transparent 65%
+  );
+  bottom: -20%;
+  left: -5%;
+  pointer-events: none;
+}
+
+/* --- Header --- */
 .analytics-clean-header {
   text-align: center;
-  margin-bottom: calc(var(--space-md) * 1.5);
+  margin-bottom: calc(var(--space-xl) * 1.1);
+  position: relative;
+  z-index: 2;
+}
+
+.analytics-label {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-accent-blue);
+  margin-bottom: var(--space-xs);
 }
 
 .analytics-clean-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.2rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-weight: 700;
   line-height: 1.2;
-  background: linear-gradient(
-    135deg,
-    var(--clr-dark-blue) 0%,
-    var(--clr-royal-blue) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--clr-white);
+  margin-top: var(--space-xs);
 }
 
-.analytics-offer-grid {
+.analytics-section-lead {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--clr-light-blue);
+  opacity: 0.8;
+  max-width: 580px;
+  margin: var(--space-sm) auto 0;
+}
+
+/* --- Feature Cards Grid --- */
+.analytics-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: calc(var(--space-md) * 1.5) var(--space-sm);
+  gap: var(--space-md);
+  position: relative;
+  z-index: 2;
 }
 
-.offer-feature-item {
+.analytics-feature-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.analytics-feature-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(18, 153, 243, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.analytics-card-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(18, 153, 243, 0.1);
+  border-radius: var(--radius-sm);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  will-change: transform, opacity;
+  justify-content: center;
+  color: var(--clr-accent-blue);
+  margin-bottom: var(--space-md);
+  border: 1px solid rgba(18, 153, 243, 0.15);
 }
 
-.offer-feature-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #64748b;
-  max-width: 320px;
+.analytics-feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.1px;
+}
+
+.analytics-feature-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(230, 240, 255, 0.65);
+}
+
+.analytics-card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--clr-accent-blue) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.analytics-feature-card:hover .analytics-card-accent {
+  opacity: 1;
+}
+
+/* Keep old classes as no-ops to avoid breaking reveal animations */
+.analytics-offer-grid,
+.offer-feature-item {
+  display: none;
 }
 
 /* ==========================================================================
@@ -491,7 +621,7 @@
 
 .challenge-section {
   padding: calc(var(--space-xl) * 1.5) 0;
-  background-color: var(--clr-accent-blueLIGHT);
+  background-color: var(--clr-white);
   color: var(--text-primary);
   overflow: hidden;
 }
@@ -517,17 +647,11 @@
 }
 
 .challenge-clean-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.2rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--space-xs);
-  background: linear-gradient(
-    135deg,
-    var(--clr-dark-blue) 0%,
-    var(--clr-royal-blue) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
 }
 
 .challenge-section-lead {
@@ -536,108 +660,113 @@
   font-weight: 500;
 }
 
-.cards-timeline-heading {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: var(--space-md);
-  padding-left: var(--space-xs);
-  position: relative;
-}
+/* ==========================================================================
+   SECTION 4: CHALLENGE — COMPARISON PANELS (REDESIGN)
+   ========================================================================== */
 
-.heading-before {
-  color: var(--clr-dark-blue);
-  margin-top: var(--space-sm);
-  text-align: center;
-}
-
-.heading-after {
-  color: var(--clr-royal-blue);
-  margin-top: calc(var(--space-xl) * 1.2);
-  text-align: center;
-}
-
-.challenge-cards-row {
+.challenge-panels {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
-  perspective: 1500px;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
 }
 
-/* --- PERSPECTIVE FLIP CARD MECHANICS --- */
-.flip-perspective-card {
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  position: relative;
+.challenge-panel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(10, 25, 47, 0.07);
+  border: 1px solid rgba(10, 25, 47, 0.06);
+}
+
+.challenge-panel-header {
   display: flex;
-  gap: var(--space-xs);
-  transform: rotateY(-95deg);
-  transform-origin: left center;
-  will-change: transform, opacity;
-  transition:
-    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--ff-body);
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.flip-perspective-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(10, 25, 47, 0.15);
+.challenge-panel--before .challenge-panel-header {
+  background: #fef2f2;
+  color: #b91c1c;
 }
 
-/* --- THE BEFORE STYLE CHANNELS --- */
-.card-style-white {
-  background-color: var(--clr-white);
-  border: 1px solid rgba(10, 25, 47, 0.05);
-  box-shadow: var(--shadow-md);
-}
-
-.card-style-white h3 {
-  font-family: var(--ff-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--clr-dark-blue);
-}
-
-.card-style-white p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #475569;
-}
-
-.card-style-white .card-num-indicator {
-  color: rgba(220, 38, 38, 0.15);
-}
-
-/* --- THE AFTER STYLE CHANNELS --- */
-.card-style-dark {
-  background-color: var(--clr-royal-blue);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 15px 35px rgba(29, 0, 97, 0.25);
-}
-
-.card-style-dark h3 {
-  font-family: var(--ff-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
+.challenge-panel--after .challenge-panel-header {
+  background: var(--clr-dark-blue);
   color: var(--clr-accent-blue);
 }
 
-.card-style-dark p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(253, 253, 253, 0.8);
+.challenge-panel-items {
+  display: flex;
+  flex-direction: column;
 }
 
-.card-style-dark .card-num-indicator {
-  color: rgba(255, 255, 255, 0.08);
+.challenge-panel-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid rgba(10, 25, 47, 0.05);
+  align-items: flex-start;
+  transition: background 0.25s ease;
 }
 
-.card-num-indicator {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-md);
+.challenge-panel--before .challenge-panel-item {
+  background: var(--clr-white);
+}
+
+.challenge-panel--before .challenge-panel-item:hover {
+  background: #fef9f9;
+}
+
+.challenge-panel--after .challenge-panel-item {
+  background: var(--clr-off-white);
+}
+
+.challenge-panel--after .challenge-panel-item:hover {
+  background: rgba(18, 153, 243, 0.04);
+}
+
+.cpi-num {
   font-family: var(--ff-heading);
-  font-size: 1.75rem;
+  font-size: 0.65rem;
   font-weight: 900;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  padding-top: 4px;
+  min-width: 22px;
+}
+
+.challenge-panel--before .cpi-num {
+  color: #fca5a5;
+}
+
+.challenge-panel--after .cpi-num {
+  color: var(--clr-accent-blue);
+}
+
+.cpi-body h3 {
+  font-family: var(--ff-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.challenge-panel--before .cpi-body h3 {
+  color: #991b1b;
+}
+
+.challenge-panel--after .cpi-body h3 {
+  color: var(--clr-dark-blue);
+}
+
+.cpi-body p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
 }
 
 /* ==========================================================================
@@ -809,17 +938,11 @@
 }
 
 .approach-glass-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.2rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--space-xs);
-  background: linear-gradient(
-    135deg,
-    var(--clr-dark-blue) 0%,
-    var(--clr-royal-blue) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
 }
 
 .approach-slider-viewport {
@@ -1056,4 +1179,232 @@
 }
 .challenge-section.in-view .row-after .flip-delay-4 {
   transition-delay: 0.95s;
+}
+
+/* ==========================================================================
+   SECTION 2: SENSOR METRICS DASHBOARD (REDESIGN)
+   ========================================================================== */
+
+.sensor-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.sensor-metric-card {
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid rgba(10, 25, 47, 0.06);
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.sensor-metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(27, 73, 224, 0.1);
+  border-color: rgba(27, 73, 224, 0.2);
+}
+
+.sensor-metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-royal-blue), var(--clr-accent-blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sensor-metric-card:hover::before {
+  opacity: 1;
+}
+
+.sensor-metric-completed {
+  border-color: rgba(0, 210, 255, 0.2);
+  background: linear-gradient(135deg, #fff 0%, var(--clr-accent-blueLIGHT) 100%);
+}
+
+.sensor-completed-badge {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  background: var(--clr-royal-blue);
+  color: var(--clr-white);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.sensor-icon-ring {
+  width: 38px;
+  height: 38px;
+  background: var(--clr-light-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+  color: var(--clr-royal-blue);
+}
+
+.sensor-metric-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.sensor-metric-reading {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-bottom: var(--space-xs);
+}
+
+.sensor-metric-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--clr-dark-blue);
+  font-family: var(--ff-heading);
+  line-height: 1;
+}
+
+.sensor-metric-unit {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.sensor-status-bar {
+  height: 3px;
+  background: rgba(10, 25, 47, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sensor-status-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--clr-royal-blue), var(--clr-accent-blue));
+  border-radius: 2px;
+}
+
+.iot-capability-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.iot-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--clr-dark-blue);
+  color: rgba(253, 253, 253, 0.85);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--clr-accent-blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulseGlow 2s infinite;
+}
+
+.chip-alert {
+  background: rgba(29, 0, 97, 0.85);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.chip-alert-dot {
+  background: #f97316;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.5);
+  animation: none;
+}
+
+/* ==========================================================================
+   INLINE CONTACT FORM SECTION (INDEX PAGE)
+   ========================================================================== */
+
+.index-contact-section {
+  padding: calc(var(--space-xl) * 1.5) 0;
+  background: var(--clr-off-white);
+  border-top: 1px solid rgba(10, 25, 47, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.index-contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-xl);
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+.index-contact-info {
+  padding-top: var(--space-sm);
+}
+
+.index-contact-info .fancy-box-badge {
+  background: var(--clr-dark-blue);
+  color: var(--clr-accent-blue);
+  border: none;
+}
+
+.index-contact-info h2 {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+.index-contact-lead {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.index-contact-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.index-contact-benefits li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.benefit-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--clr-royal-blue);
+  border-radius: 50%;
+  flex-shrink: 0;
 }

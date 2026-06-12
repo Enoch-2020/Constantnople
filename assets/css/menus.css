@@ -21,9 +21,9 @@
 }
 
 .header-container {
-  max-width: 1140px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,6 +121,132 @@
 }
 
 /* ==========================================================================
+   1b. PRE-FOOTER CALL-TO-ACTION BAND (SHARED ACROSS ALL PAGES)
+   ========================================================================== */
+
+.pre-footer-cta-section {
+  background: var(--clr-off-white);
+  padding: calc(var(--space-xl) * 1.1) 0;
+  border-top: 1px solid rgba(10, 25, 47, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.pre-footer-cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(17, 22, 133, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(18, 153, 243, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pre-footer-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.pre-footer-cta-content h2 {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  font-weight: 700;
+  color: var(--clr-dark-blue);
+  margin-bottom: var(--space-xs);
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.pre-footer-cta-content p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+.pre-footer-cta-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.btn-cta-primary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--clr-white);
+  background: linear-gradient(90deg, var(--clr-dark-blue), var(--clr-royal-blue));
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(17, 22, 133, 0.25);
+  white-space: nowrap;
+}
+
+.btn-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(17, 22, 133, 0.38);
+}
+
+.btn-cta-secondary {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--clr-dark-blue);
+  background: transparent;
+  border: 2px solid rgba(17, 22, 133, 0.2);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btn-cta-secondary:hover {
+  border-color: var(--clr-royal-blue);
+  background: rgba(17, 22, 133, 0.04);
+  color: var(--clr-royal-blue);
+}
+
+@media (max-width: 768px) {
+  .header-container,
+  .footer-container,
+  .footer-bottom-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pre-footer-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .pre-footer-cta-content p {
+    margin: 0 auto;
+  }
+
+  .pre-footer-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
    2. GLOBAL FOOTER BASE STYLES (CLEAN DESKTOP ARCHITECTURE)
    ========================================================================== */
 
@@ -135,9 +261,9 @@
 }
 
 .footer-container {
-  max-width: 1140px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 var(--space-md) var(--space-xl);
+  padding: 0 30px var(--space-xl);
   position: relative;
   z-index: 2;
 }
@@ -267,9 +393,9 @@
 }
 
 .footer-bottom-container {
-  max-width: 1140px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 30px;
   display: flex;
 }
 

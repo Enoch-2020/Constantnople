@@ -7,47 +7,14 @@
     <link rel="stylesheet" href="assets/css/root.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/indexres.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
     <link rel="stylesheet" href="assets/css/menus.css" />
   </head>
-  <body>
-    <!--=============HEADER DESIGN SECTION ---=---------======================-->
-    <header class="main-header">
-      <div class="header-container">
-        <a href="index.html" class="header-brand-block">
-          <img
-            src="assets/imgs/logo.jpg"
-            alt="Constantnople Logo"
-            class="header-logo"
-          />
-          <span class="header-brand-name">Constantnople</span>
-        </a>
-
-        <nav class="header-nav-container">
-          <ul class="header-nav-list">
-            <li>
-              <a href="index.html" class="header-nav-link active">Home</a>
-            </li>
-            <li>
-              <a href="insights.html" class="header-nav-link">Insights</a>
-            </li>
-            <li>
-              <a href="contact.html" class="header-nav-link">Contact us</a>
-            </li>
-          </ul>
-        </nav>
-
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </div>
-    </header>
-
-    <!--=============HEADER DESIGN SECTION ENDS---=---------======================-->
+  <body data-page="home">
+    <header class="main-header" id="main-header"></header>
 
     <main class="premium-homepage">
-      <!-- ================= HERO SECTION ================= -->
+      <!-- ================= HERO ================= -->
       <section class="hero-section scroll-reveal">
         <div class="hero-glow-sphere"></div>
         <div class="container hero-grid">
@@ -87,212 +54,463 @@
         </div>
       </section>
 
-      <!-- ================= SECTION 2: DATA COLLECTION ================= -->
+      <!-- ================= SECTION 2: DATA COLLECTION (FULL-WIDTH) ================= -->
       <section class="iot-section scroll-reveal">
-        <div class="container iot-flex-layout">
-          <!-- Left Side: Interactive Graphic Panel (Slides from Left) -->
-          <div class="iot-visual-side">
-            <div class="image-premium-frame">
-              <div class="glass-ambient-glow"></div>
-              <img
-                src="/assets/imgs/fishone.jpg"
-                alt="Aquaculture Monitoring Telemetry"
-                class="iot-display-img"
-              />
-            </div>
-          </div>
-
-          <!-- Right Side: Structured Details List (Slides from Right) -->
-          <div class="iot-details-side">
+        <div class="container">
+          <div class="iot-section-header scroll-reveal-up">
             <div class="fancy-box-badge">IoT Monitoring System</div>
             <h2>Data Collection Layer</h2>
             <p class="iot-section-desc">
-              Sensors installed within cages to collect real-time data on:
+              Sensors installed within cages collect real-time data on critical
+              water quality parameters — streamed continuously to the central
+              system every 25–30 minutes.
             </p>
+          </div>
 
-            <ul class="iot-parameters-checklist">
-              <li>
-                <span class="pulse-indicator"></span>
-                <strong>pH levels</strong>
-              </li>
-              <li>
-                <span class="pulse-indicator"></span>
-                <strong>Temperature</strong>
-              </li>
-              <li>
-                <span class="pulse-indicator"></span>
-                <strong>Turbidity</strong>
-              </li>
-              <li>
-                <span class="pulse-indicator orange-alert"></span>
-                <strong
-                  >Dissolved oxygen
-                  <span class="badge-in-progress">(Completed)</span></strong
+          <div class="sensor-metrics-grid sensor-metrics-grid--quad">
+            <!-- pH -->
+            <div class="sensor-metric-card">
+              <div class="sensor-icon-ring">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-              </li>
-              <li>
-                <span class="pulse-indicator constant-stream"></span>
-                <strong
-                  >Continuous transmission of data to the central system</strong
+                  <path
+                    d="M9 3h6m-5 0v7.5L5 17a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 17l-5-6.5V3"
+                  ></path>
+                </svg>
+              </div>
+              <div class="sensor-metric-label">pH Balance</div>
+              <div class="sensor-metric-reading">
+                <span class="sensor-metric-value">7.4</span>
+                <span class="sensor-metric-unit">pH</span>
+              </div>
+              <div class="sensor-status-bar">
+                <div class="sensor-status-fill" style="width: 74%"></div>
+              </div>
+            </div>
+
+            <!-- Temperature -->
+            <div class="sensor-metric-card">
+              <div class="sensor-icon-ring">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-              </li>
-              <li>
-                <span class="pulse-indicator"></span>
-                <strong>Enables real-time water quality monitoring</strong>
-              </li>
-              <li>
-                <span class="pulse-indicator alert-bell"></span>
-                <strong>Provides alerts for abnormal conditions</strong>
-              </li>
-            </ul>
+                  <path
+                    d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="sensor-metric-label">Temperature</div>
+              <div class="sensor-metric-reading">
+                <span class="sensor-metric-value">25.8</span>
+                <span class="sensor-metric-unit">°C</span>
+              </div>
+              <div class="sensor-status-bar">
+                <div class="sensor-status-fill" style="width: 64%"></div>
+              </div>
+            </div>
+
+            <!-- Turbidity -->
+            <div class="sensor-metric-card">
+              <div class="sensor-icon-ring">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+              <div class="sensor-metric-label">Turbidity</div>
+              <div class="sensor-metric-reading">
+                <span class="sensor-metric-value">Optimal</span>
+              </div>
+              <div class="sensor-status-bar">
+                <div class="sensor-status-fill" style="width: 82%"></div>
+              </div>
+            </div>
+
+            <!-- Dissolved O₂ -->
+            <div class="sensor-metric-card sensor-metric-completed">
+              <div class="sensor-completed-badge">Completed</div>
+              <div class="sensor-icon-ring">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <div class="sensor-metric-label">Dissolved O₂</div>
+              <div class="sensor-metric-reading">
+                <span class="sensor-metric-value">8.2</span>
+                <span class="sensor-metric-unit">mg/L</span>
+              </div>
+              <div class="sensor-status-bar">
+                <div class="sensor-status-fill" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="iot-capability-chips iot-chips-centered">
+            <div class="iot-chip">
+              <span class="chip-dot"></span>
+              Continuous Data Transmission
+            </div>
+            <div class="iot-chip">
+              <span class="chip-dot"></span>
+              Real-time Monitoring
+            </div>
+            <div class="iot-chip chip-alert">
+              <span class="chip-dot chip-alert-dot"></span>
+              Abnormal Condition Alerts
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= SECTION 3: INTELLIGENCE LAYER ================= -->
+      <!-- ================= SECTION 3: AI & ANALYTICS (REDESIGNED DARK) ================= -->
       <section class="analytics-section">
         <div class="container">
           <div class="analytics-clean-header scroll-reveal-up">
-            <span class="fancy-box-badge">Intelligence Layer</span>
-            <h2>AI & Analytics Platform</h2>
+            <span class="analytics-label">Intelligence Layer</span>
+            <h2>AI &amp; Analytics Platform</h2>
+            <p class="analytics-section-lead">
+              Raw sensor data transformed into actionable intelligence — giving
+              farmers and investors the insights they need to act decisively and
+              reduce risk.
+            </p>
           </div>
 
-          <div class="analytics-offer-grid">
-            <div class="offer-feature-item reveal-from-left">
-              <p>Processes data collected from IoT sensors</p>
-            </div>
-
-            <div class="offer-feature-item reveal-from-up">
+          <div class="analytics-feature-grid">
+            <div class="analytics-feature-card reveal-from-left">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <h3>Data Processing Engine</h3>
               <p>
-                Generates insights and predictions on: Fish health, Water
-                quality trends, Risk of disease or low oxygen levels
+                Processes data collected from IoT sensors across all cages,
+                normalizing and enriching readings for downstream analysis.
               </p>
+              <div class="analytics-card-accent"></div>
             </div>
 
-            <div class="offer-feature-item reveal-from-right">
-              <p>Provides decision-support tools for farmers</p>
-            </div>
-
-            <div class="offer-feature-item reveal-from-left">
+            <div class="analytics-feature-card reveal-from-up">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <h3>Predictive Insights</h3>
               <p>
-                Farmers and investors would be interested in frequency of reads
-                (25-30 mins), storage of the data- virtual server
+                Generates predictions on fish health trajectories, water quality
+                trends, and early indicators of disease or oxygen stress.
               </p>
+              <div class="analytics-card-accent"></div>
             </div>
 
-            <div class="offer-feature-item reveal-from-down">
+            <div class="analytics-feature-card reveal-from-right">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.07 4.93l-1.41 1.41M17.66 17.66l1.41 1.41M4.93 4.93l1.41 1.41M6.34 17.66l-1.41 1.41M22 12h-2M4 12H2M12 22v-2M12 4V2"
+                  ></path>
+                </svg>
+              </div>
+              <h3>Decision Support Tools</h3>
               <p>
-                Easy access to historical data to be able to show patterns- The
-                app shows historical data. You can actually filter by dates.
-                alert to issues- the app sends alerts when thresholds are
-                crossed.
+                Translates complex data into clear, actionable recommendations —
+                no technical expertise required for day-to-day farm management.
               </p>
+              <div class="analytics-card-accent"></div>
             </div>
 
-            <div class="offer-feature-item reveal-from-right">
+            <div class="analytics-feature-card reveal-from-left">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <h3>Historical Data Access</h3>
               <p>
-                quantity of cages that can be read- one installation per cage.
-                You'd be better off visibly showing that the business is a
-                start-up looking for farmers and investors to support developing
-                it into a fully-fledged
+                Filter and review past readings by date range — identify
+                seasonal patterns and benchmark performance over time.
               </p>
+              <div class="analytics-card-accent"></div>
+            </div>
+
+            <div class="analytics-feature-card reveal-from-down">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <h3>Real-time Alert System</h3>
+              <p>
+                Sends instant notifications when readings cross critical
+                thresholds — giving farmers time to intervene before losses
+                occur.
+              </p>
+              <div class="analytics-card-accent"></div>
+            </div>
+
+            <div class="analytics-feature-card reveal-from-right">
+              <div class="analytics-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Farmer &amp; Investor Dashboard</h3>
+              <p>
+                A unified view for farmers managing daily operations and
+                investors needing transparency — with reads every 25–30 minutes.
+              </p>
+              <div class="analytics-card-accent"></div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ================= SECTION 4: THE CHALLENGE ================= -->
-      <section class="challenge-section" id="challenge">
+      <section class="challenge-section scroll-reveal" id="challenge">
         <div class="container">
           <div class="challenge-clean-header">
             <div class="challenge-mini-badge">The Challenge</div>
             <h2>Why This Matters</h2>
             <p class="challenge-section-lead">
               Fish farmers across Kenya and Africa face real, costly challenges
-              every day. <br />Our solution was built specifically to solve
-              them.
+              every day. Our solution was built specifically to solve them.
             </p>
           </div>
 
-          <div class="cards-timeline-heading heading-before">
-            Before — Challenges Farmers Face
-          </div>
-          <div class="challenge-cards-row row-before">
-            <div class="flip-perspective-card card-style-white flip-delay-1">
-              <div class="card-num-indicator">01</div>
-              <h3>High fish mortality</h3>
-              <p>
-                Poor cage conditions and unmanaged water quality lead to
-                avoidable stock losses
-              </p>
+          <div class="challenge-panels">
+            <!-- Before Panel -->
+            <div class="challenge-panel challenge-panel--before">
+              <div class="challenge-panel-header">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  ></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Before Constantnople</span>
+              </div>
+              <div class="challenge-panel-items">
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">01</span>
+                  <div class="cpi-body">
+                    <h3>High fish mortality</h3>
+                    <p>
+                      Poor cage conditions and unmanaged water quality lead to
+                      avoidable stock losses.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">02</span>
+                  <div class="cpi-body">
+                    <h3>Rapidly degrading cages</h3>
+                    <p>
+                      Wooden structures rot, pollute water, and require constant
+                      expensive repairs.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">03</span>
+                  <div class="cpi-body">
+                    <h3>No water quality visibility</h3>
+                    <p>
+                      Disease outbreaks and oxygen crashes go undetected until
+                      the damage is done.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">04</span>
+                  <div class="cpi-body">
+                    <h3>Limited access to technology</h3>
+                    <p>
+                      Modern aquaculture tools remain out of reach for
+                      small-scale farmers.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="flip-perspective-card card-style-white flip-delay-2">
-              <div class="card-num-indicator">02</div>
-              <h3>Rapidly degrading cages</h3>
-              <p>
-                Wooden structures rot, pollute water, and require constant
-                expensive repairs
-              </p>
-            </div>
-
-            <div class="flip-perspective-card card-style-white flip-delay-3">
-              <div class="card-num-indicator">03</div>
-              <h3>No water quality visibility</h3>
-              <p>
-                Disease outbreaks and oxygen crashes go undetected until the
-                damage is done
-              </p>
-            </div>
-
-            <div class="flip-perspective-card card-style-white flip-delay-4">
-              <div class="card-num-indicator">04</div>
-              <h3>Limited access to technology</h3>
-              <p>
-                Modern aquaculture tools remain out of reach for small-scale
-                farmers
-              </p>
-            </div>
-          </div>
-
-          <div class="cards-timeline-heading heading-after">
-            After — What Our Solution Delivers
-          </div>
-          <div class="challenge-cards-row row-after">
-            <div class="flip-perspective-card card-style-dark flip-delay-1">
-              <div class="card-num-indicator">01</div>
-              <h3>Higher fish survival rates</h3>
-              <p>
-                Better cage design and improved water circulation keep fish
-                healthy throughout the season
-              </p>
-            </div>
-
-            <div class="flip-perspective-card card-style-dark flip-delay-2">
-              <div class="card-num-indicator">02</div>
-              <h3>Improved farm productivity</h3>
-              <p>
-                Durable HDPE cages and monitoring tools drive increased yields
-                season after season
-              </p>
-            </div>
-
-            <div class="flip-perspective-card card-style-dark flip-delay-3">
-              <div class="card-num-indicator">03</div>
-              <h3>Reduced operational losses</h3>
-              <p>
-                Less time and money spent on cage repairs and emergency stock
-                replacement
-              </p>
-            </div>
-
-            <div class="flip-perspective-card card-style-dark flip-delay-4">
-              <div class="card-num-indicator">04</div>
-              <h3>Protected aquatic ecosystems</h3>
-              <p>
-                Contributes to food security, farmer livelihoods, and long-term
-                environmental sustainability
-              </p>
+            <!-- After Panel -->
+            <div class="challenge-panel challenge-panel--after">
+              <div class="challenge-panel-header">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>With Constantnople</span>
+              </div>
+              <div class="challenge-panel-items">
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">01</span>
+                  <div class="cpi-body">
+                    <h3>Higher fish survival rates</h3>
+                    <p>
+                      Better cage design and improved water circulation keep
+                      fish healthy throughout the season.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">02</span>
+                  <div class="cpi-body">
+                    <h3>Improved farm productivity</h3>
+                    <p>
+                      Durable HDPE cages and monitoring tools drive increased
+                      yields season after season.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">03</span>
+                  <div class="cpi-body">
+                    <h3>Reduced operational losses</h3>
+                    <p>
+                      Less time and money spent on cage repairs and emergency
+                      stock replacement.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-panel-item">
+                  <span class="cpi-num">04</span>
+                  <div class="cpi-body">
+                    <h3>Protected aquatic ecosystems</h3>
+                    <p>
+                      Contributes to food security, farmer livelihoods, and
+                      long-term environmental sustainability.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -352,8 +570,8 @@
             <span class="challenge-mini-badge">Our Approach</span>
             <h2>How We Help Farmers</h2>
             <p class="challenge-section-lead">
-              Our approach is practical and problem-driven — built around <br />
-              the real challenges farmers face every day.
+              Our approach is practical and problem-driven — built around
+              <br />the real challenges farmers face every day.
             </p>
           </div>
 
@@ -367,7 +585,6 @@
                   the problems that hurt their income most.
                 </p>
               </div>
-
               <div class="approach-glass-card">
                 <h3>Clear, Measurable Value</h3>
                 <p>
@@ -376,7 +593,6 @@
                   farmers tangible returns on every season.
                 </p>
               </div>
-
               <div class="approach-glass-card">
                 <h3>Tested with Early Adopters</h3>
                 <p>
@@ -386,7 +602,6 @@
                   rates.
                 </p>
               </div>
-
               <div class="approach-glass-card">
                 <h3>Building Trust Through Results</h3>
                 <p>
@@ -395,7 +610,6 @@
                   genuinely simplify day-to-day farm management.
                 </p>
               </div>
-
               <div class="approach-glass-card">
                 <h3>Long-Term Farmer Empowerment</h3>
                 <p>
@@ -439,78 +653,131 @@
           </div>
         </div>
       </section>
+
+      <!-- ================= CONTACT FORM SECTION ================= -->
+      <section class="index-contact-section scroll-reveal" id="contact">
+        <div class="container">
+          <div class="index-contact-layout">
+            <div class="index-contact-info">
+              <div class="fancy-box-badge">Work With Us</div>
+              <h2>Design Your Perfect Aquatic System</h2>
+              <p class="index-contact-lead">
+                Let our engineering team help you design the perfect system for
+                your aquatic project — from cage sizing to full IoT integration.
+              </p>
+              <ul class="index-contact-benefits">
+                <li>
+                  <span class="benefit-dot"></span>
+                  Custom cage sizing for any water body
+                </li>
+                <li>
+                  <span class="benefit-dot"></span>
+                  IoT sensor integration tailored to your farm
+                </li>
+                <li>
+                  <span class="benefit-dot"></span>
+                  Real-time monitoring and alert setup
+                </li>
+                <li>
+                  <span class="benefit-dot"></span>
+                  Dedicated technical support team
+                </li>
+              </ul>
+            </div>
+
+            <div class="index-contact-form-wrap">
+              <div class="contact-form-card">
+                <h2>Tell us about your project</h2>
+                <form
+                  id="indexContactForm"
+                  class="interactive-form-element"
+                  novalidate
+                >
+                  <div class="form-input-row">
+                    <div class="form-input-group">
+                      <label for="cf-name">Full Name</label>
+                      <input
+                        type="text"
+                        id="cf-name"
+                        name="fullName"
+                        placeholder="Jane Mwangi"
+                        required
+                      />
+                    </div>
+                    <div class="form-input-group">
+                      <label for="cf-phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="cf-phone"
+                        name="phone"
+                        placeholder="+254 712 345 678"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-input-row">
+                    <div class="form-input-group">
+                      <label for="cf-email">Email Address</label>
+                      <input
+                        type="email"
+                        id="cf-email"
+                        name="email"
+                        placeholder="jane@company.com"
+                        required
+                      />
+                    </div>
+                    <div class="form-input-group">
+                      <label for="cf-org">Organisation</label>
+                      <input
+                        type="text"
+                        id="cf-org"
+                        name="organisation"
+                        placeholder="Farm name or company"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-input-row">
+                    <div class="form-input-group">
+                      <label for="cf-location">Location</label>
+                      <input
+                        type="text"
+                        id="cf-location"
+                        name="location"
+                        placeholder="County / Region"
+                        required
+                      />
+                    </div>
+                    <div class="form-input-group">
+                      <label for="cf-cage-size">Size of the Cage</label>
+                      <input
+                        type="text"
+                        id="cf-cage-size"
+                        name="cageSize"
+                        placeholder="e.g. 10m × 10m"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="form-submit-trigger"
+                    id="indexSubmitBtn"
+                  >
+                    <span class="btn-label-text">Submit Inquiry</span>
+                    <span class="btn-spinner-element"></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!--=============FOOTER DESIGN SECTION---=---------======================-->
-    <footer class="main-footer scroll-reveal">
-      <div class="footer-container">
-        <div class="footer-area footer-brand-block">
-          <div class="footer-logo-identity">
-            <img
-              src="assets/imgs/logo.jpg"
-              alt="Constantnople Logo"
-              class="footer-brand-logo"
-            />
-            <span class="footer-brand-name">Constantnople</span>
-          </div>
-          <p class="footer-brand-tagline">
-            Empowering fish farmers across Africa.
-          </p>
-        </div>
+    <section class="pre-footer-cta-section" id="pre-footer-cta"></section>
+    <footer class="main-footer scroll-reveal" id="main-footer"></footer>
 
-        <div class="footer-area footer-links-block">
-          <h3 class="footer-heading">Quick Action</h3>
-          <ul class="footer-links-list">
-            <li>
-              <a href="#" class="footer-interactive-link">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" class="footer-interactive-link">Terms of Service</a>
-            </li>
-            <li>
-              <a href="#" class="footer-interactive-link">Contact Support</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-area footer-contact-block">
-          <h3 class="footer-heading">Contact us</h3>
-          <div class="footer-contact-matrix">
-            <div class="footer-contact-item">
-              <span class="contact-label">Email:</span>
-              <a
-                href="mailto:sales@constantnople.co.ke"
-                class="footer-interactive-link"
-                >sales@constantnople.co.ke</a
-              >
-            </div>
-
-            <div class="footer-contact-item">
-              <span class="contact-label">Call us:</span>
-              <a href="tel:0728483950" class="footer-interactive-link"
-                >0728483950</a
-              >
-            </div>
-
-            <div class="footer-contact-item">
-              <span class="contact-label">Our Location:</span>
-              <p class="contact-plain-text">
-                Headquartered in Chandaria Business Innovation Center
-              </p>
-              <p class="contact-sub-text">Serving clients across the region.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom-bar">
-        <div class="footer-bottom-container">
-          <p>&copy; 2026 Constantnople Enterprise. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/components.js"></script>
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>
