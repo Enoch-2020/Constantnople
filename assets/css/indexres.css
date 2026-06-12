@@ -54,6 +54,26 @@
   .container {
     padding: 0 20px;
   }
+
+  /* Approach slider — disable sliding on mobile, stack cards vertically */
+  .approach-slider-viewport {
+    overflow: visible;
+  }
+
+  .approach-slider-track {
+    flex-direction: column;
+    transform: none !important;
+    gap: var(--space-md);
+  }
+
+  .approach-glass-card {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .approach-slider-controls {
+    display: none;
+  }
 }
 
 @media (max-width: 997px) and (max-width: 768px) {

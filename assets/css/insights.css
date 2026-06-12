@@ -519,6 +519,56 @@
     padding: var(--space-xl) 0;
   }
 
+  /* Milestones — vertical stack on mobile */
+  .milestones-track-wrapper {
+    overflow-x: visible;
+  }
+
+  .milestones-track {
+    flex-direction: column;
+    min-width: unset;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .milestones-track::before {
+    top: 22px;
+    left: 21px;
+    right: auto;
+    bottom: 22px;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--clr-dark-blue), var(--clr-accent-blue));
+  }
+
+  .milestone-item {
+    flex: none;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 var(--space-lg) 0;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .milestone-dot {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .milestone-content {
+    padding-top: 10px;
+  }
+
+  .milestone-content h3 {
+    font-size: 0.92rem;
+  }
+
+  .milestones-footnote {
+    margin-top: var(--space-md);
+  }
+
+  /* App items */
   .app-item {
     grid-template-columns: 1fr;
     gap: var(--space-xs);
