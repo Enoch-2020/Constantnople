@@ -135,9 +135,9 @@
 }
 
 .about-hero-content h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: var(--space-md) 0;
   color: var(--clr-white);
 }
@@ -213,7 +213,7 @@
 }
 
 .mv-card h2 {
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: var(--space-md);
@@ -249,7 +249,7 @@
 }
 
 .core-values-header h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;
@@ -334,7 +334,7 @@
 }
 
 .roadmap-header h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;
@@ -491,7 +491,7 @@
 }
 
 .legacy-inner h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 800;
   color: var(--clr-white);
   line-height: 1.2;
@@ -524,7 +524,7 @@
 .legacy-tagline {
   display: inline-block;
   font-family: var(--ff-heading);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.7rem);
   font-weight: 900;
   letter-spacing: -0.5px;
   background: linear-gradient(90deg, var(--clr-light-blue), var(--clr-accent-blue));
@@ -551,7 +551,7 @@
 }
 
 .team-header h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;

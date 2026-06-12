@@ -164,9 +164,9 @@
 }
 
 .insights-hero-content h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: var(--space-md) 0;
   color: var(--clr-white);
 }
@@ -223,7 +223,7 @@
 }
 
 .milestones-header h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;
@@ -354,7 +354,7 @@
 }
 
 .app-section-header h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;
