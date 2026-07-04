@@ -3,17 +3,16 @@
 /* 2. DESIGN SYSTEM TOKENS */
 :root {
   /* Color Palette */
-  --clr-dark-blue: #24036f;
-  --clr-royal-blue: #111685;
+  --clr-dark-blue: #1d0061;
+  --clr-royal-blue: #070fab;
   --clr-light-blue: #e6f0ff;
-  --clr-accent-blue: #1299f3;
+  --clr-accent-blue: #00d2ff;
   --clr-accent-blueLIGHT: #ddf6fc;
   --clr-white: #fdfdfd;
   --clr-light-gray: #c5c6c7;
   --clr-black: #121214;
-  --clr-off-white: #f4f5f7;
 
-  --clr-dark-bluetrans: #24036f76;
+  --clr-dark-bluetrans: #1d006176;
 
   /* Semantic UI Colors */
   --bg-main: var(--clr-light-gray);

@@ -1,154 +1,260 @@
 /* ==========================================================================
-   PREMIUM SYSTEM RESPONSIVE RECONFIGURATIONS
+   CONSTANTNOPLE — HOME PAGE RESPONSIVE
    ========================================================================== */
 
-/* --- TABLET COMPACT LAYOUT ENGINE (MAX-WIDTH: 1024px) --- */
-@media (max-width: 768px) {
-  .sensor-metrics-grid,
-  .sensor-metrics-grid--quad {
+/* ─── LARGE TABLET (≤ 1100px) ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hero-layout {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: clamp(32px, 5vw, 60px);
   }
 
-  .sensor-metric-value {
-    font-size: 1.15rem;
+  .analytics-offer-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .iot-capability-chips {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .index-contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .index-contact-info {
-    padding-top: 0;
-  }
-
-  .form-input-row {
-    grid-template-columns: 1fr;
-  }
-
-  /* Challenge comparison panels — stack on mobile */
-  .challenge-panels {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-
-  .challenge-panel-header {
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .challenge-panel-item {
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  /* Analytics cards — single column */
-  .analytics-feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Container padding reduced on mobile */
-  .container {
-    padding: 0 20px;
-  }
-
-  /* Approach slider — disable sliding on mobile, stack cards vertically */
-  .approach-slider-viewport {
-    overflow: visible;
-  }
-
-  .approach-slider-track {
-    flex-direction: column;
-    transform: none !important;
-    gap: var(--space-md);
+  .glowing-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .approach-glass-card {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .approach-slider-controls {
-    display: none;
+    flex: 0 0 calc(55% - 12px);
   }
 }
 
-@media (max-width: 997px) and (max-width: 768px) {
-  .hero-grid,
-  .analytics-grid,
-  .fancy-comparison-layout {
+/* ─── TABLET (≤ 900px) ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+
+  /* Hero */
+  .hero-section {
+    padding: 100px 0 70px;
+    min-height: auto;
+  }
+
+  .hero-layout {
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    gap: clamp(32px, 5vw, 48px);
   }
 
-  .hero-visual-panel {
+  .hero-headline {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+  }
+
+  .hero-ctas {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  /* 3D panel — remove tilt on tablet */
+  .hero-panel-3d {
+    transform: none !important;
+  }
+
+  /* Depth card repositioned */
+  .hero-depth-card {
+    transform: none;
+    animation: none;
+    position: static;
+    width: fit-content;
+  }
+
+  /* Stats */
+  .stats-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stats-strip-item + .stats-strip-item::before {
     display: none;
-    height: 300px;
   }
 
-  /* IoT Structural Stack Adjustments */
+  /* IoT */
   .iot-flex-layout {
     flex-direction: column;
-    gap: var(--space-xl);
   }
 
-  .iot-visual-side,
-  .iot-details-side {
-    width: 100%;
+  .iot-visual-side {
     flex: none;
-    transform: translateY(30px);
+    width: 100%;
   }
 
-  .iot-section.scroll-reveal.in-view .iot-visual-side,
-  .iot-section.scroll-reveal.in-view .iot-details-side {
-    transform: translateY(0);
-  }
-
-  /* Grid Framework Remapping */
+  /* Analytics */
   .analytics-offer-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl) var(--space-md);
+    gap: var(--space-md);
   }
 
+  /* Challenge */
   .challenge-cards-row {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Pillars */
+  .glowing-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Approach slider */
+  .approach-glass-card {
+    flex: 0 0 calc(80% - 12px);
+  }
+}
+
+/* ─── MOBILE (≤ 600px) ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+
+  /* Hero */
+  .hero-section {
+    padding: 90px 0 60px;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-lead {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .btn-primary-hero,
+  .btn-ghost-hero {
+    padding: 12px 24px;
+    font-size: 0.88rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .hero-stats-row {
+    gap: 8px;
+    margin-top: 1.25rem;
+  }
+
+  .hero-stat-pill {
+    padding: 7px 14px;
+    gap: 8px;
+  }
+
+  .hero-stat-figure {
+    font-size: 1rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-3d-floor {
+    display: none;
+  }
+
+  /* Telemetry panel */
+  .telemetry-panel {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .telem-row {
+    font-size: 0.85rem;
+  }
+
+  .hero-mini-chips {
+    gap: 8px;
+  }
+
+  .mini-chip {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  /* Stats strip */
+  .stats-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .strip-figure {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  .strip-label {
+    font-size: 0.75rem;
+  }
+
+  /* Analytics */
+  .analytics-offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Challenge */
+  .challenge-cards-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  /* Pillars */
+  .glowing-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-number-glow {
+    font-size: 3rem;
+  }
+
+  /* Approach slider */
+  .approach-glass-card {
+    flex: 0 0 calc(92% - 12px);
+  }
+
+  .approach-glass-card h3 {
+    font-size: 1rem;
+  }
+
+  /* IoT checklist */
+  .iot-parameters-checklist li {
+    padding: 10px var(--space-sm);
+    font-size: 0.88rem;
+    gap: var(--space-sm);
   }
 
   .cards-timeline-heading {
     font-size: 1rem;
   }
-  /* Asymmetric Challenge Row Refactoring */
-  .challenge-flex-layout {
-    flex-direction: column;
-    gap: var(--space-xl);
+
+  .flip-perspective-card {
+    padding: var(--space-sm) var(--space-md);
   }
 
-  .fancy-centered-header h2 {
-    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  .fancy-pillar-card {
+    padding: clamp(24px, 5vw, 40px) clamp(20px, 5vw, 28px);
+  }
+}
+
+/* ─── SMALL MOBILE (≤ 380px) ───────────────────────────────────────────── */
+@media (max-width: 380px) {
+  .stats-strip-grid {
+    grid-template-columns: 1fr;
   }
 
-  .glowing-pillars-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--space-sm);
+  .stats-strip-item + .stats-strip-item::before {
+    display: none;
   }
 
-  .challenge-content-side,
-  .challenge-visual-side {
-    width: 100%;
-    flex: none;
-    transform: translateY(30px);
+  .hero-headline {
+    font-size: 1.75rem;
   }
 
-  .challenge-visual-side {
-    position: relative;
-    top: 0;
-  }
-
-  .challenge-section.scroll-reveal.in-view .challenge-content-side,
-  .challenge-section.scroll-reveal.in-view .challenge-visual-side {
-    transform: translateY(0);
+  .strip-figure {
+    font-size: 1.8rem;
   }
 }

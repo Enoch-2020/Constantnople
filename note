@@ -1,0 +1,82 @@
+/* Deep modern background layers with clean color gradients */
+.premium-homepage section:nth-child(odd) {
+  background:
+    linear-gradient(
+      -200deg,
+      var(--clr-dark-bluetrans) 0%,
+      var(--clr-royal-blue) 100%
+    ),
+    url("../imgs/fishbackground.jpg") repeat center/contain;
+  color: var(--clr-white);
+}
+
+.premium-homepage section:nth-child(even) {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--clr-black);
+}
+
+
+
+
+
+   <!-- ================= SECTION 6: OUR APPROACH ================= -->
+      <section class="approach-section scroll-reveal">
+        <div class="container">
+          <div class="fancy-centered-header">
+            <span class="gradient-label">Our Approach</span>
+            <h2>How We Help Farmers</h2>
+            <p>
+              Our approach is practical and problem-driven — built around the
+              real challenges farmers face every day.
+            </p>
+          </div>
+
+          <div class="fancy-approach-mesh">
+            <div class="mesh-block">
+              <div class="mesh-index">A</div>
+              <h4>Targeting Real Pain Points</h4>
+              <p>
+                We focus on farmers struggling with frequent cage repairs, fish
+                losses, and lack of access to modern tools — addressing the
+                problems that hurt their income most.
+              </p>
+            </div>
+            <div class="mesh-block">
+              <div class="mesh-index">B</div>
+              <h4>Clear, Measurable Value</h4>
+              <p>
+                Our solution is positioned to increase fish survival rates,
+                reduce maintenance costs, and improve productivity — giving
+                farmers tangible returns on every season.
+              </p>
+            </div>
+            <div class="mesh-block">
+              <div class="mesh-index">C</div>
+              <h4>Tested with Early Adopters</h4>
+              <p>
+                We tested our system with real farmers, gathered their feedback
+                to refine the product, and demonstrated real-world results —
+                better cage durability and higher fish survival rates.
+              </p>
+            </div>
+            <div class="mesh-block">
+              <div class="mesh-index">D</div>
+              <h4>Building Trust Through Results</h4>
+              <p>
+                Rather than selling technology alone, we show practical
+                improvements, prioritize ease of use, and provide tools that
+                genuinely simplify day-to-day farm management.
+              </p>
+            </div>
+            <div class="mesh-block text-spanning-block">
+              <div class="mesh-index">E</div>
+              <h4>Long-Term Farmer Empowerment</h4>
+              <p>
+                Our goal goes beyond selling cages. We support sustainable
+                livelihoods, strengthen food security, and enable farmers to
+                scale their operations over time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>

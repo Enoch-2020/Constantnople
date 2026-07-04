@@ -1,52 +1,57 @@
 /* ==========================================================================
-   CONTACT PAGE BREAKPOINT LAYOUT SYSTEMS
+   CONTACTNOPLE — CONTACT PAGE RESPONSIVE
    ========================================================================== */
 
-@media (max-width: 1024px) {
-  .contact-interface-container {
+/* ─── TABLET (≤ 900px) ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cpage-grid {
     grid-template-columns: 1fr;
-    margin-top: -40px;
-    gap: var(--space-xl);
+    gap: clamp(40px, 6vw, 64px);
   }
 
-  .contact-mini-badge {
-    margin: var(--space-md) 0;
+  .cpage-info-col {
+    position: static;
   }
 
-  .contact-hero-container h1 {
-    font-size: clamp(1.25rem, 4vw, 1.25rem);
+  .cpage-hero {
+    padding: 120px 0 70px;
   }
 
-  .contact-hero-container p {
-    font-size: 0.8rem;
-  }
-
-  .contact-info-column {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-  }
-
-  .info-details-card:hover {
-    transform: translateY(-4px);
+  .cpage-hero h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
   }
 }
 
-@media (max-width: 768px) {
-  .contact-hero-section {
-    padding: calc(var(--space-xl) * 1) 0 var(--space-xl);
+/* ─── MOBILE (≤ 600px) ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .cpage-hero {
+    padding: 110px 0 60px;
   }
 
-  .contact-info-column {
+  .cpage-hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    letter-spacing: -0.5px;
+  }
+
+  .cform-row {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
-  .form-input-row {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+  .cpage-form-card {
+    border-radius: 14px;
+    padding: 28px 22px;
   }
 
-  .contact-form-card {
-    padding: var(--space-md);
+  .cpage-info-heading {
+    font-size: 1.4rem;
+  }
+
+  .cpage-info-item {
+    padding: 14px 16px;
+  }
+
+  .cpage-topics-wrap {
+    gap: 6px;
   }
 }

@@ -3,15 +3,15 @@
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initContactScrollReveal();
   initContactFormEngine();
+  initFooterReveal();
 });
 
 /**
  * Handles continuous scrolling updates across viewport checkpoints
  */
 function initContactScrollReveal() {
-  const targetInterface = document.querySelector(".contact-interface-section");
+  const targetInterface = document.querySelector(".cpage-body");
   if (!targetInterface) return;
 
   const revealSettings = {
@@ -31,6 +31,24 @@ function initContactScrollReveal() {
   }, revealSettings);
 
   revealObserver.observe(targetInterface);
+}
+
+function initFooterReveal() {
+  const footer = document.querySelector(".main-footer.scroll-reveal");
+  if (!footer) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        } else {
+          entry.target.classList.remove("in-view");
+        }
+      });
+    },
+    { root: null, threshold: 0.08 }
+  );
+  observer.observe(footer);
 }
 
 /**
