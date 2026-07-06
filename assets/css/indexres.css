@@ -73,13 +73,8 @@
   }
 
   /* IoT */
-  .iot-flex-layout {
-    flex-direction: column;
-  }
-
-  .iot-visual-side {
-    flex: none;
-    width: 100%;
+  .iot-parameters-grid {
+    grid-template-columns: 1fr;
   }
 
   /* Analytics */
