@@ -571,11 +571,11 @@
 }
 
 .founder-avatar {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 3px solid rgba(0, 210, 255, 0.3);
+  width: 220px;
+  height: 280px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -587,14 +587,15 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .founder-avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 50%;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: var(--radius-md);
   display: block;
 }
 
@@ -638,7 +639,7 @@
 .team-card {
   background: var(--clr-white);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-md);
+  padding: 0;
   text-align: center;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(10, 25, 47, 0.05);
@@ -650,8 +651,8 @@
 .team-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
   background: linear-gradient(90deg, var(--clr-royal-blue), var(--clr-accent-blue));
 }
 
@@ -661,30 +662,37 @@
 }
 
 .team-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--clr-royal-blue), var(--clr-accent-blue));
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  background: #f0f4fb;
   color: var(--clr-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   font-family: var(--ff-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  margin: 0 auto var(--space-md);
+  margin: 0;
   overflow: hidden;
-  border: 3px solid var(--clr-light-blue);
-  outline: 2px solid rgba(7, 15, 171, 0.12);
+  border: none;
+  outline: none;
 }
 
 .team-avatar img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 50%;
+  height: auto;
   display: block;
+}
+
+.team-card h3 {
+  padding: 1.2rem 1.25rem 0.3rem;
+}
+
+.team-card-role {
+  padding: 0 1.25rem 0.75rem;
+}
+
+.team-card p {
+  padding: 0 1.25rem 1.25rem;
 }
 
 .team-card h3 {
@@ -1085,7 +1093,11 @@
     text-align: center;
   }
 
-  .founder-avatar { margin: 0 auto; }
+  .founder-avatar {
+    margin: 0 auto;
+    width: 180px;
+    height: 220px;
+  }
 
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1109,8 +1121,9 @@
   }
 
   .founder-avatar {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 260px;
+    border-radius: var(--radius-md);
     font-size: 2.2rem;
   }
 
