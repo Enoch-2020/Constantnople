@@ -6,7 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
   initDataAnimate();
   initScrollReveal();
   initTimelineReveal();
+  initPageEntrance();
 });
+
+/* ─── PAGE ENTRANCE (above-the-fold items animate on load) ─────────────── */
+function initPageEntrance() {
+  // Immediately reveal any .fade-up elements that are already in the viewport
+  // (e.g. the first section right after the hero)
+  setTimeout(() => {
+    const targets = document.querySelectorAll(".fade-up, .fade-left, .fade-right");
+    targets.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add("in-view");
+      }
+    });
+  }, 120);
+}
 
 /* ─── DATA-ANIMATE ENGINE ──────────────────────────────────────────────── */
 function initDataAnimate() {
@@ -17,12 +33,15 @@ function initDataAnimate() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("anim-done");
+          const delay = entry.target.dataset.delay
+            ? parseInt(entry.target.dataset.delay) / 1000
+            : 0;
+          setTimeout(() => entry.target.classList.add("anim-done"), delay * 1000);
           observer.unobserve(entry.target);
         }
       });
     },
-    { root: null, threshold: 0.1, rootMargin: "-20px 0px -20px 0px" }
+    { root: null, threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
   );
 
   targets.forEach((el) => observer.observe(el));
@@ -43,7 +62,7 @@ function initScrollReveal() {
         }
       });
     },
-    { root: null, threshold: 0.1, rootMargin: "-20px 0px -20px 0px" }
+    { root: null, threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
   );
 
   targets.forEach((el) => observer.observe(el));
@@ -74,7 +93,7 @@ function initTimelineReveal() {
         }
       });
     },
-    { root: null, threshold: 0.15 }
+    { root: null, threshold: 0.12 }
   );
 
   items.forEach((item) => observer.observe(item));

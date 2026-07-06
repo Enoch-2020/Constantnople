@@ -28,6 +28,25 @@
     transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* DATA-ANIMATE SYSTEM
+   ========================================================================== */
+[data-animate] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+[data-animate="fade-up"]    { transform: translateY(40px); }
+[data-animate="fade-left"]  { transform: translateX(-50px); }
+[data-animate="fade-right"] { transform: translateX(50px); }
+
+[data-animate].anim-done {
+  opacity: 1;
+  transform: none !important;
+  transition:
+    opacity  0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* HERO — minimal, powerful
    ========================================================================== */
 .cpage-hero {

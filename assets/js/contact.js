@@ -5,7 +5,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   initContactFormEngine();
   initFooterReveal();
+  initDataAnimate();
 });
+
+/* ─── DATA-ANIMATE ENGINE ──────────────────────────────────────────────── */
+function initDataAnimate() {
+  const targets = document.querySelectorAll("[data-animate]");
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("anim-done");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+}
 
 /**
  * Handles continuous scrolling updates across viewport checkpoints
