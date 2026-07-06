@@ -31,7 +31,9 @@
 /* HERO — minimal, powerful
    ========================================================================== */
 .cpage-hero {
-  background: linear-gradient(165deg, #02000e 0%, #0e0047 40%, #060230 70%, #010110 100%);
+  background:
+    linear-gradient(165deg, rgba(2,0,14,0.88) 0%, rgba(14,0,71,0.82) 40%, rgba(6,2,48,0.88) 70%, rgba(1,1,16,0.92) 100%),
+    url("../imgs/constnew.jpg") center / cover no-repeat;
   padding: 150px 0 90px;
   text-align: center;
   position: relative;
@@ -90,11 +92,11 @@
 
 .cpage-hero h1 {
   font-family: var(--ff-heading);
-  font-size: clamp(3rem, 7vw, 5.4rem);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
   font-weight: 900;
   color: var(--clr-white);
-  line-height: 1.05;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   margin-bottom: 1rem;
 }
 
@@ -178,12 +180,12 @@
 
 .cpage-info-icon {
   width: 42px; height: 42px;
-  background: #e6f0ff;
+  background: var(--clr-light-blue);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #070fab;
+  color: var(--clr-royal-blue);
   flex-shrink: 0;
 }
 
@@ -400,7 +402,7 @@
   gap: 10px;
   width: 100%;
   padding: 15px 28px;
-  background: #1d0061;
+  background: var(--clr-royal-blue);
   color: var(--clr-white);
   border: none;
   border-radius: 10px;
@@ -414,7 +416,7 @@
 }
 
 .cform-submit:hover {
-  background: #070fab;
+  background: var(--clr-dark-blue);
   transform: translateY(-3px);
   box-shadow: 0 14px 32px rgba(7,15,171,0.3);
 }

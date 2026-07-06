@@ -55,7 +55,7 @@
   padding-bottom: 90px;
   background:
     linear-gradient(-200deg, var(--clr-dark-bluetrans) 0%, var(--clr-royal-blue) 100%),
-    url("../imgs/fishbackground.jpg") center / cover no-repeat;
+    url("../imgs/constnew.jpg") center / cover no-repeat;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -110,7 +110,7 @@
 
 .page-hero h1 {
   font-family: var(--ff-heading);
-  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--clr-white);
   line-height: 1.1;
@@ -164,8 +164,8 @@
 
 .section-eyebrow {
   display: inline-block;
-  background: var(--clr-dark-blue);
-  color: var(--clr-accent-blue);
+  background: var(--clr-light-blue);
+  color: var(--clr-royal-blue);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -182,7 +182,7 @@
 
 .section-header h2 {
   font-family: var(--ff-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.4px;
@@ -391,7 +391,7 @@
 
 .split-content h2 {
   font-family: var(--ff-heading);
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.3px;
@@ -571,8 +571,8 @@
 }
 
 .founder-avatar {
-  width: 140px;
-  height: 140px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   border: 3px solid rgba(0, 210, 255, 0.3);
@@ -586,11 +586,21 @@
   flex-shrink: 0;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+
+.founder-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
 }
 
 .founder-info h2 {
   font-family: var(--ff-heading);
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   font-weight: 800;
   color: var(--clr-white);
   margin-bottom: 4px;
@@ -651,8 +661,8 @@
 }
 
 .team-avatar {
-  width: 76px;
-  height: 76px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--clr-royal-blue), var(--clr-accent-blue));
   color: var(--clr-white);
@@ -663,6 +673,18 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0 auto var(--space-md);
+  overflow: hidden;
+  border: 3px solid var(--clr-light-blue);
+  outline: 2px solid rgba(7, 15, 171, 0.12);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
 }
 
 .team-card h3 {
@@ -715,7 +737,7 @@
 
 .company-name-block h2 {
   font-family: var(--ff-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
   font-weight: 800;
   color: var(--clr-white);
   margin-bottom: var(--space-md);
@@ -766,7 +788,7 @@
 
 .commitment-callout h2 {
   font-family: var(--ff-heading);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
   font-weight: 800;
   color: var(--clr-white);
   line-height: 1.2;
@@ -849,8 +871,8 @@
 
 .btn-cta {
   display: inline-block;
-  background: var(--clr-accent-blue);
-  color: var(--clr-dark-blue);
+  background: var(--clr-royal-blue);
+  color: var(--clr-white);
   padding: 14px 36px;
   border-radius: var(--radius-sm);
   font-family: var(--ff-heading);
@@ -862,10 +884,10 @@
 }
 
 .btn-cta:hover {
-  background: var(--clr-white);
-  color: var(--clr-dark-blue);
+  background: var(--clr-dark-blue);
+  color: var(--clr-white);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 210, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(7, 15, 171, 0.35);
 }
 
 /* SCROLL REVEAL CLASSES  — slide-in AND slide-out with blur
